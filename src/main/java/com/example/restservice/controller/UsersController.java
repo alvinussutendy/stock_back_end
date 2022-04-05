@@ -28,6 +28,7 @@ public class UsersController {
   /**
    * Method for create new users
    * @return ResponseEntity: http header and body
+   * @param users object
    */
   @CrossOrigin(origins = "http://localhost:3000") //just allow origin from http://localhost:3000
   @PostMapping("/add") //the end point is http://localhost:8080/api/users/add with method post
@@ -72,6 +73,7 @@ public class UsersController {
   /**
    * Method for get users by username
    * @return ResponseEntity: http header and body
+   * @param users object
    */
   @CrossOrigin(origins = "http://localhost:3000") //just allow origin from http://localhost:3000
   @PostMapping("/") //the end point is http://localhost:8080/api/users/ with method post

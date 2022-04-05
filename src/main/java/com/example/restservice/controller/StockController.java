@@ -19,8 +19,6 @@ import com.example.restservice.model.Stock;
 import com.example.restservice.repository.StockRepository;
 
 // This class is used as a controller for Stock model
-// @ResponseBody means the returned String is the response, not a view name
-// @RequestParam means it is a parameter from the GET or POST request
 
 @Controller // This means that this class is a Controller
 @RequestMapping(path="/api/stock") // This means URL's start with /api/stock (after Application path)
@@ -32,6 +30,7 @@ public class StockController {
   /**
    * Method for create new stock
    * @return ResponseEntity: http header and body
+   * @param stock object
    */
   @CrossOrigin(origins = "http://localhost:3000") //just allow origin from http://localhost:3000
   @PostMapping("/add") //the end point is http://localhost:8080/api/stock/add with method post
@@ -70,6 +69,7 @@ public class StockController {
   /**
    * Method for get stock by id
    * @return ResponseEntity: http header and body
+   * @param stock id
    */
   @CrossOrigin(origins = "http://localhost:3000") //just allow origin from http://localhost:3000
   @GetMapping("/{id}") //the end point is http://localhost:8080/api/stock/{id} with method get
@@ -85,6 +85,7 @@ public class StockController {
   /**
    * Method for update stock
    * @return ResponseEntity: http header and body
+   * @param stock id and stock object
    */
   @CrossOrigin(origins = "http://localhost:3000") //just allow origin from http://localhost:3000
   @PutMapping("/{id}") //the end point is http://localhost:8080/api/stock/{id} with method put
@@ -104,6 +105,7 @@ public class StockController {
   /**
    * Method for delete stock
    * @return ResponseEntity: http header and body
+   * @param stock id
    */
   @CrossOrigin(origins = "http://localhost:3000") //just allow origin from http://localhost:3000
   @DeleteMapping("/{id}") //the end point is http://localhost:8080/api/stock/{id} with method delete
